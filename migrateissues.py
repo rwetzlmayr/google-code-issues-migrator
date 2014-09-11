@@ -277,8 +277,8 @@ def process_gcode_issues(existing_issues):
 
         # Add the issue and its comments to Github, if we haven't already
         if issue['gid'] in existing_issues:
-            github_issue = existing_issues[issue['gid']]
-            output('Not adding issue %d (exists)' % issue['gid'])
+            output('Not adding issue %d (exists)' % issue['gid'] + '\n')
+            continue
         else:
             github_issue = add_issue_to_github(issue)
 
